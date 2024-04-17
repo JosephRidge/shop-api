@@ -1,3 +1,81 @@
+# Best Practice: 
+
+ - Naming Convention: Use pronouns as opposed to using verbs 
+ - HTTPS methods: Use of approriate HTTP verbs
+ - Use Status codes: [HTTP Response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+ - Caching: Makes our servers work more efficient due to less interaction to the server.
+ - Optimization: Reducing the number of HTTP request to the server
+
+
+## Caching :
+- Transparently storing data for future use in an attempt to make applicatins run faster.
+- It is some what is similar to a session, since you provide a key to store them  
+- The difference lies in how they store data in the sense that Sessions store data between pages and a cache sis used to cache data per application. Henc eyou usualy store stuff like database quesries and API calls in your cache 
+
+# Cache Driver options:
+## File
+- default driver
+- creates a new encrypted file per cachce in /storage/framework/cache folder
+- recommended for development since it is faster than adding your cache in the DB
+
+## Array
+- Simple array where you will store your cache
+- provides convinent cache backends for your automates tests
+- advantage is that you do not need to configure a driver
+CACHE_DRIVER=array
+
+## DB
+- Stores cache in memory of current PHP process
+- to use this you nmeed to create a db table through artisan
+- likeely to overload there exist a ton of cache on your site
+no recommended in reallife examples
+```
+php artisan cache:table
+```
+
+- Some data retreival processing tasks performed by your application might be CPU intensive or time consuming.
+- Its common practice to cache the retreived data for a time so it can be retreived quickly on subsequent requests for the same data
+- Cached data is usually stored in a very fast data store such as [Memcached](https://memcached.org/) or [Redis](https://redis.io/)
+
+
+## Configuration
+Config**config/cache.php**
+
+
+## Some Resources:
+[Laravel Cache(documentation + implementation)](https://laravel.com/docs/11.x/cache)
+
+[Laravel Caching(simplified)](https://youtu.be/6eJMRMgn6mI)
+
+[How to make your DB fast by caching (general concepts in caching)](https://youtu.be/_JGgGR3Rp60)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
