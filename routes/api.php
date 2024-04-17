@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SupplierController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
@@ -25,9 +26,19 @@ use App\Http\Controllers\ProductController;
  * 
  */
 // Create 
- Route::post('/products',[ProductController::class,'createProduct']);
- // Read All
- Route::get('/products',[ProductController::class,'getAllProducts']);
- // Read One
- // Update
- // Delete
+Route::post('/products', [ProductController::class, 'createProduct']);
+// Read All
+Route::get('/products', [ProductController::class, 'getAllProducts']);
+// Read One
+// Update
+// Delete
+
+
+/**
+ * SUPPLIERS 
+ */
+Route::post('/supplier', [SupplierController::class, 'createSupplier']);  // Create
+Route::get('/suppliers', [SupplierController::class, 'getAllSuppliers']);  // Read All
+Route::get('/supplier', [SupplierController::class, 'getSupplier']);  // Read one
+Route::put('/supplier', [SupplierController::class, 'updateSupplier']);  // Update
+Route::delete('/supplier', [SupplierController::class, 'deleteSupplier']);// Delete
