@@ -42,7 +42,8 @@ class ProductController extends Controller
             return response(
                 [
                     'message' => 'success',
-                    'product' => $product, 
+                    'product' => $product,
+                    200 
                 ]
             );
         } else {
